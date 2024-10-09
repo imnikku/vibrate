@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+export const App = () => {
+  const [a, setA] = useState(10);
+  function increment() {
+    navigator.vibrate(200); // vibrate for 200ms
+
+    setA(a + 1);
+  }
+  console.log("render", a, setA);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={increment}>Increment</button>
+      <p>count:- {a}</p>
     </div>
   );
-}
-
-export default App;
+};
