@@ -3,7 +3,7 @@ import React, { useState } from "react";
 export const App = () => {
   const [a, setA] = useState(10);
   function increment() {
-    navigator.vibrate(200); // vibrate for 200ms
+    navigator.vibrate(100); // vibrate for 200ms
 
     setA(a + 1);
   }
